@@ -1,0 +1,81 @@
+[
+  {
+    "ContainingType": "MapApplication2.Controllers.GeoEntityController",
+    "Method": "GetAll",
+    "RelativePath": "api/GeoEntity",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MapApplication2.Controllers.GeoEntityController",
+    "Method": "Create",
+    "RelativePath": "api/GeoEntity",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "entity",
+        "Type": "MapApplication2.Models.GeoEntity",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MapApplication2.Controllers.GeoEntityController",
+    "Method": "GetById",
+    "RelativePath": "api/GeoEntity/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MapApplication2.Controllers.GeoEntityController",
+    "Method": "Update",
+    "RelativePath": "api/GeoEntity/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "entity",
+        "Type": "MapApplication2.Models.GeoEntity",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MapApplication2.Controllers.GeoEntityController",
+    "Method": "Delete",
+    "RelativePath": "api/GeoEntity/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

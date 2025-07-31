@@ -1,0 +1,253 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ahmet\\source\\repos\\MapApplication2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{287B2E3B-4E30-42CB-B326-0D716485C6A3}|MapApplication2.csproj|c:\\users\\ahmet\\source\\repos\\mapapplication2\\wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{287B2E3B-4E30-42CB-B326-0D716485C6A3}|MapApplication2.csproj|solutionrelative:wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{287B2E3B-4E30-42CB-B326-0D716485C6A3}|MapApplication2.csproj|c:\\users\\ahmet\\source\\repos\\mapapplication2\\controllers\\geoentitycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{287B2E3B-4E30-42CB-B326-0D716485C6A3}|MapApplication2.csproj|solutionrelative:controllers\\geoentitycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{287B2E3B-4E30-42CB-B326-0D716485C6A3}|MapApplication2.csproj|c:\\users\\ahmet\\source\\repos\\mapapplication2\\geoentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{287B2E3B-4E30-42CB-B326-0D716485C6A3}|MapApplication2.csproj|solutionrelative:geoentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{287B2E3B-4E30-42CB-B326-0D716485C6A3}|MapApplication2.csproj|c:\\users\\ahmet\\source\\repos\\mapapplication2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{287B2E3B-4E30-42CB-B326-0D716485C6A3}|MapApplication2.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{287B2E3B-4E30-42CB-B326-0D716485C6A3}|MapApplication2.csproj|c:\\users\\ahmet\\source\\repos\\mapapplication2\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{287B2E3B-4E30-42CB-B326-0D716485C6A3}|MapApplication2.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{287B2E3B-4E30-42CB-B326-0D716485C6A3}|MapApplication2.csproj|c:\\users\\ahmet\\source\\repos\\mapapplication2\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{287B2E3B-4E30-42CB-B326-0D716485C6A3}|MapApplication2.csproj|solutionrelative:applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{287B2E3B-4E30-42CB-B326-0D716485C6A3}|MapApplication2.csproj|c:\\users\\ahmet\\source\\repos\\mapapplication2\\mapapplication2.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{287B2E3B-4E30-42CB-B326-0D716485C6A3}|MapApplication2.csproj|solutionrelative:mapapplication2.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{287B2E3B-4E30-42CB-B326-0D716485C6A3}|MapApplication2.csproj|c:\\users\\ahmet\\source\\repos\\mapapplication2\\services\\geoentityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{287B2E3B-4E30-42CB-B326-0D716485C6A3}|MapApplication2.csproj|solutionrelative:services\\geoentityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{287B2E3B-4E30-42CB-B326-0D716485C6A3}|MapApplication2.csproj|c:\\users\\ahmet\\source\\repos\\mapapplication2\\repositories\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{287B2E3B-4E30-42CB-B326-0D716485C6A3}|MapApplication2.csproj|solutionrelative:repositories\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{287B2E3B-4E30-42CB-B326-0D716485C6A3}|MapApplication2.csproj|c:\\users\\ahmet\\source\\repos\\mapapplication2\\services\\igeoentityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{287B2E3B-4E30-42CB-B326-0D716485C6A3}|MapApplication2.csproj|solutionrelative:services\\igeoentityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{287B2E3B-4E30-42CB-B326-0D716485C6A3}|MapApplication2.csproj|c:\\users\\ahmet\\source\\repos\\mapapplication2\\unit\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{287B2E3B-4E30-42CB-B326-0D716485C6A3}|MapApplication2.csproj|solutionrelative:unit\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{287B2E3B-4E30-42CB-B326-0D716485C6A3}|MapApplication2.csproj|c:\\users\\ahmet\\source\\repos\\mapapplication2\\repositories\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{287B2E3B-4E30-42CB-B326-0D716485C6A3}|MapApplication2.csproj|solutionrelative:repositories\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{287B2E3B-4E30-42CB-B326-0D716485C6A3}|MapApplication2.csproj|c:\\users\\ahmet\\source\\repos\\mapapplication2\\utilities\\apiresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{287B2E3B-4E30-42CB-B326-0D716485C6A3}|MapApplication2.csproj|solutionrelative:utilities\\apiresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{287B2E3B-4E30-42CB-B326-0D716485C6A3}|MapApplication2.csproj|c:\\users\\ahmet\\source\\repos\\mapapplication2\\unit\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{287B2E3B-4E30-42CB-B326-0D716485C6A3}|MapApplication2.csproj|solutionrelative:unit\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 156,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 8,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GeoEntityController.cs",
+              "DocumentMoniker": "C:\\Users\\ahmet\\source\\repos\\MapApplication2\\Controllers\\GeoEntityController.cs",
+              "RelativeDocumentMoniker": "Controllers\\GeoEntityController.cs",
+              "ToolTip": "C:\\Users\\ahmet\\source\\repos\\MapApplication2\\Controllers\\GeoEntityController.cs",
+              "RelativeToolTip": "Controllers\\GeoEntityController.cs",
+              "ViewState": "AQIAACgAAAAAAAAAAAAwwD4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-29T13:34:07.933Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "IGeoEntityService.cs",
+              "DocumentMoniker": "C:\\Users\\ahmet\\source\\repos\\MapApplication2\\Services\\IGeoEntityService.cs",
+              "RelativeDocumentMoniker": "Services\\IGeoEntityService.cs",
+              "ToolTip": "C:\\Users\\ahmet\\source\\repos\\MapApplication2\\Services\\IGeoEntityService.cs",
+              "RelativeToolTip": "Services\\IGeoEntityService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-29T13:30:51.796Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "GeoEntityService.cs",
+              "DocumentMoniker": "C:\\Users\\ahmet\\source\\repos\\MapApplication2\\Services\\GeoEntityService.cs",
+              "RelativeDocumentMoniker": "Services\\GeoEntityService.cs",
+              "ToolTip": "C:\\Users\\ahmet\\source\\repos\\MapApplication2\\Services\\GeoEntityService.cs",
+              "RelativeToolTip": "Services\\GeoEntityService.cs",
+              "ViewState": "AQIAABsAAAAAAAAAAAAqwC8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-29T13:30:34.429Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GeoEntity.cs",
+              "DocumentMoniker": "C:\\Users\\ahmet\\source\\repos\\MapApplication2\\GeoEntity.cs",
+              "RelativeDocumentMoniker": "GeoEntity.cs",
+              "ToolTip": "C:\\Users\\ahmet\\source\\repos\\MapApplication2\\GeoEntity.cs",
+              "RelativeToolTip": "GeoEntity.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAAwAcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-26T14:10:41.373Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "IUnitOfWork.cs",
+              "DocumentMoniker": "C:\\Users\\ahmet\\source\\repos\\MapApplication2\\Unit\\IUnitOfWork.cs",
+              "RelativeDocumentMoniker": "Unit\\IUnitOfWork.cs",
+              "ToolTip": "C:\\Users\\ahmet\\source\\repos\\MapApplication2\\Unit\\IUnitOfWork.cs",
+              "RelativeToolTip": "Unit\\IUnitOfWork.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-26T08:57:09.851Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "UnitOfWork.cs",
+              "DocumentMoniker": "C:\\Users\\ahmet\\source\\repos\\MapApplication2\\Unit\\UnitOfWork.cs",
+              "RelativeDocumentMoniker": "Unit\\UnitOfWork.cs",
+              "ToolTip": "C:\\Users\\ahmet\\source\\repos\\MapApplication2\\Unit\\UnitOfWork.cs",
+              "RelativeToolTip": "Unit\\UnitOfWork.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-11T13:25:27.91Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "index.html",
+              "DocumentMoniker": "C:\\Users\\ahmet\\source\\repos\\MapApplication2\\wwwroot\\index.html",
+              "RelativeDocumentMoniker": "wwwroot\\index.html",
+              "ToolTip": "C:\\Users\\ahmet\\source\\repos\\MapApplication2\\wwwroot\\index.html",
+              "RelativeToolTip": "wwwroot\\index.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2024-07-19T13:19:48.335Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MapApplication2.csproj",
+              "DocumentMoniker": "C:\\Users\\ahmet\\source\\repos\\MapApplication2\\MapApplication2.csproj",
+              "RelativeDocumentMoniker": "MapApplication2.csproj",
+              "ToolTip": "C:\\Users\\ahmet\\source\\repos\\MapApplication2\\MapApplication2.csproj",
+              "RelativeToolTip": "MapApplication2.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-07-19T13:19:10.655Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Repository.cs",
+              "DocumentMoniker": "C:\\Users\\ahmet\\source\\repos\\MapApplication2\\Repositories\\Repository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Repository.cs",
+              "ToolTip": "C:\\Users\\ahmet\\source\\repos\\MapApplication2\\Repositories\\Repository.cs",
+              "RelativeToolTip": "Repositories\\Repository.cs",
+              "ViewState": "AQIAACEAAAAAAAAAAAA6wDUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-11T05:40:11.424Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IRepository.cs",
+              "DocumentMoniker": "C:\\Users\\ahmet\\source\\repos\\MapApplication2\\Repositories\\IRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\IRepository.cs",
+              "ToolTip": "C:\\Users\\ahmet\\source\\repos\\MapApplication2\\Repositories\\IRepository.cs",
+              "RelativeToolTip": "Repositories\\IRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-11T05:39:57.552Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\ahmet\\source\\repos\\MapApplication2\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\ahmet\\source\\repos\\MapApplication2\\ApplicationDbContext.cs",
+              "RelativeToolTip": "ApplicationDbContext.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAcwBwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-10T10:54:33.028Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\ahmet\\source\\repos\\MapApplication2\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\ahmet\\source\\repos\\MapApplication2\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-07-08T05:33:58.148Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ApiResponse.cs",
+              "DocumentMoniker": "C:\\Users\\ahmet\\source\\repos\\MapApplication2\\Utilities\\ApiResponse.cs",
+              "RelativeDocumentMoniker": "Utilities\\ApiResponse.cs",
+              "ToolTip": "C:\\Users\\ahmet\\source\\repos\\MapApplication2\\Utilities\\ApiResponse.cs",
+              "RelativeToolTip": "Utilities\\ApiResponse.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-05T08:34:27.75Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\ahmet\\source\\repos\\MapApplication2\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\ahmet\\source\\repos\\MapApplication2\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAACEAAAAAAAAAAAAAACkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-04T09:58:12.753Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,125 @@
+{
+  "Version": 1,
+  "Hash": "TfrmwHXRPDyxVpBr1eZ9B8ndbaqEfVq1hV4U7+ESiqo=",
+  "Source": "MapApplication2",
+  "BasePath": "_content/MapApplication2",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "MapApplication2\\wwwroot",
+      "Source": "MapApplication2",
+      "ContentRoot": "C:\\Users\\ahmet\\source\\repos\\MapApplication2\\wwwroot\\",
+      "BasePath": "_content/MapApplication2",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\ahmet\\source\\repos\\MapApplication2\\wwwroot\\index.html",
+      "SourceId": "MapApplication2",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ahmet\\source\\repos\\MapApplication2\\wwwroot\\",
+      "BasePath": "_content/MapApplication2",
+      "RelativePath": "index#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "hu7dnph8cd",
+      "Integrity": "BwwdrqZaQ2muEg9nf/B6Ky3ubAS/wtcrykPUqwCp46c=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\index.html"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "index.html",
+      "AssetFile": "C:\\Users\\ahmet\\source\\repos\\MapApplication2\\wwwroot\\index.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "16289"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"BwwdrqZaQ2muEg9nf/B6Ky3ubAS/wtcrykPUqwCp46c=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 Aug 2024 12:55:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-BwwdrqZaQ2muEg9nf/B6Ky3ubAS/wtcrykPUqwCp46c="
+        }
+      ]
+    },
+    {
+      "Route": "index.hu7dnph8cd.html",
+      "AssetFile": "C:\\Users\\ahmet\\source\\repos\\MapApplication2\\wwwroot\\index.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "16289"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"BwwdrqZaQ2muEg9nf/B6Ky3ubAS/wtcrykPUqwCp46c=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 Aug 2024 12:55:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "hu7dnph8cd"
+        },
+        {
+          "Name": "label",
+          "Value": "index.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-BwwdrqZaQ2muEg9nf/B6Ky3ubAS/wtcrykPUqwCp46c="
+        }
+      ]
+    }
+  ]
+}

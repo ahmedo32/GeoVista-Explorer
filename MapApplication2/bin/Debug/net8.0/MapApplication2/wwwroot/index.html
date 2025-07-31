@@ -1,0 +1,379 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Map of Turkey</title>
+    <link href="https://cdn.jsdelivr.net/npm/jspanel4@4.16.1/dist/jspanel.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/openlayers/dist/ol.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jspanel4@4.16.1/dist/jspanel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/openlayers/dist/ol.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <style>
+        .map-container {
+            width: 100%;
+            height: 800px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#" id="addPoint">Add Point</a>
+        <a href="#" id="addPolygon">Add Polygon</a>
+        <a href="#" id="query">Query</a>
+    </div>
+
+    <div id="map" class="map-container"></div>
+
+    <script>
+        var currentPanel = null;
+        var vectorSource;
+        var map;
+
+        function initializeMap() {
+            map = new ol.Map({
+                target: 'map',
+                layers: [
+                    new ol.layer.Tile({
+                        source: new ol.source.OSM()
+                    })
+                ],
+                view: new ol.View({
+                    center: ol.proj.fromLonLat([35.243322, 38.963745]),
+                    zoom: 6
+                }),
+                interactions: ol.interaction.defaults({ doubleClickZoom: false })
+            });
+            return map;
+        }
+
+        function addVectorLayerToMap(map) {
+            vectorSource = new ol.source.Vector();
+            var vectorLayer = new ol.layer.Vector({ source: vectorSource });
+            map.addLayer(vectorLayer);
+
+            // Fetch existing features from the server
+            $.ajax({
+                url: 'https://localhost:7267/api/geoentity',
+                type: 'GET',
+                success: function (response) {
+                    console.log('Fetched features:', response);
+                    response.forEach(function (featureData) {
+                        try {
+                            var feature = new ol.format.WKT().readFeature(featureData.wkt, {
+                                dataProjection: 'EPSG:4326',
+                                featureProjection: 'EPSG:3857'
+                            });
+                            feature.setId(featureData.id);
+                            feature.set('name', featureData.name);
+                            vectorSource.addFeature(feature);
+                        } catch (error) {
+                            console.error('Error parsing WKT:', error);
+                        }
+                    });
+                },
+                error: function (xhr, status, error) {
+                    console.error('Error fetching features:', error);
+                }
+            });
+        }
+
+        function setupDrawInteraction(map, type) {
+            var draw = new ol.interaction.Draw({
+                source: vectorSource,
+                type: type
+            });
+            map.addInteraction(draw);
+
+            draw.on('drawend', function (event) {
+                var feature = event.feature;
+                var coords;
+                if (type === 'Point') {
+                    coords = feature.getGeometry().getCoordinates();
+                    coords = ol.proj.toLonLat(coords);
+                    openPanel(coords, null, 'Point');
+                } else if (type === 'Polygon') {
+                    coords = feature.getGeometry().getCoordinates()[0]; // get outer ring
+                    coords = coords.map(coord => ol.proj.toLonLat(coord));
+                    openPanel(coords, null, 'Polygon');
+                }
+
+                map.removeInteraction(draw);
+            });
+        }
+
+        function openPanel(coords, id, type) {
+            if (currentPanel) {
+                currentPanel.close();
+            }
+
+            var nameValue = '';
+            var isExistingFeature = false;
+            if (id) {
+                var feature = vectorSource.getFeatureById(id);
+                if (feature) {
+                    nameValue = feature.get('name');
+                    isExistingFeature = true;
+                } else {
+                    console.error('Feature with ID ' + id + ' not found.');
+                    return;
+                }
+            }
+
+            var coordsInput = '';
+            if (type === 'Point') {
+                coordsInput = '<label>X: <input id="x-coord" type="text" value="' + coords[0] + '" readonly /></label>' +
+                    '<label>Y: <input id="y-coord" type="text" value="' + coords[1] + '" readonly /></label>';
+            } else if (type === 'Polygon') {
+                coordsInput = coords.map(function (coord, index) {
+                    return '<label>X' + (index + 1) + ': <input name="x-coord" type="text" value="' + coord[0] + '" readonly /></label>' +
+                        '<label>Y' + (index + 1) + ': <input name="y-coord" type="text" value="' + coord[1] + '" readonly /></label>';
+                }).join('<br>');
+            }
+
+            currentPanel = jsPanel.create({
+                theme: 'primary',
+                headerTitle: isExistingFeature ? 'Edit Feature' : 'Add Feature',
+                position: 'center-top 0 58',
+                contentSize: '300 250',
+                content: coordsInput +
+                    '<label>Name: <input id="feature-name" type="text" value="' + nameValue + '"/></label>' +
+                    '<button onclick="saveFeature(\'' + (id ? id : '') + '\', \'' + type + '\')">' + (isExistingFeature ? 'Update' : 'Save') + '</button>' +
+                    (isExistingFeature ? '<button onclick="deleteFeature(\'' + id + '\')">Delete</button>' : '')
+            });
+        }
+
+        window.saveFeature = function (id, type) {
+            var nameElement = document.getElementById('feature-name');
+            if (!nameElement) {
+                console.error('Feature name input element not found.');
+                return;
+            }
+            var name = nameElement.value.trim();
+            if (!name) {
+                alert('Please enter a name for the feature.');
+                return;
+            }
+
+            var coords;
+            try {
+                if (type === 'Point') {
+                    var xElement = document.getElementById('x-coord');
+                    var yElement = document.getElementById('y-coord');
+                    if (!xElement || !yElement) {
+                        console.error('Coordinate input elements not found.');
+                        return;
+                    }
+                    var x = parseFloat(xElement.value);
+                    var y = parseFloat(yElement.value);
+                    coords = [x, y];
+                } else if (type === 'Polygon') {
+                    coords = [];
+                    var xInputs = document.querySelectorAll('input[name="x-coord"]');
+                    var yInputs = document.querySelectorAll('input[name="y-coord"]');
+                    if (xInputs.length === 0 || yInputs.length === 0) {
+                        console.error('Polygon coordinate input elements not found.');
+                        return;
+                    }
+                    for (var i = 0; i < xInputs.length; i++) {
+                        var x = parseFloat(xInputs[i].value);
+                        var y = parseFloat(yInputs[i].value);
+                        coords.push([x, y]);
+                    }
+                    // Ensure the polygon coordinates form a closed ring
+                    if (coords.length > 0 && !coords[0].every((val, i) => val === coords[coords.length - 1][i])) {
+                        coords.push(coords[0]); // Close the polygon ring
+                    }
+                    coords = [coords]; // Encapsulate in array for Polygon
+                }
+
+                var feature;
+                if (id) {
+                    feature = vectorSource.getFeatureById(id);
+                    if (feature) {
+                        if (type === 'Point') {
+                            feature.setGeometry(new ol.geom.Point(ol.proj.fromLonLat(coords)));
+                        } else if (type === 'Polygon') {
+                            feature.setGeometry(new ol.geom.Polygon(coords.map(coord => ol.proj.fromLonLat(coord))));
+                        }
+                        feature.set('name', name);
+                        saveFeatureToServer(feature);
+                    } else {
+                        console.error('Feature with ID ' + id + ' not found.');
+                    }
+                } else {
+                    if (type === 'Point') {
+                        feature = new ol.Feature(new ol.geom.Point(ol.proj.fromLonLat(coords)));
+                    } else if (type === 'Polygon') {
+                        feature = new ol.Feature(new ol.geom.Polygon(coords.map(coord => ol.proj.fromLonLat(coord))));
+                    }
+                    feature.set('name', name);
+                    vectorSource.addFeature(feature);
+                    saveFeatureToServer(feature);
+                }
+                if (currentPanel) {
+                    currentPanel.close();
+                }
+            } catch (error) {
+                console.error('Error saving feature:', error);
+            }
+        }
+
+        function saveFeatureToServer(feature) {
+            var id = feature.getId();
+            var name = feature.get('name');
+            var geom = feature.getGeometry();
+            var wkt = new ol.format.WKT().writeGeometry(geom, { dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857' });
+
+            var data = {
+                id: id,
+                name: name,
+                wkt: wkt
+            };
+
+            var url = 'https://localhost:7267/api/geoentity' + (id ? '/' + id : '');
+            var method = id ? 'PUT' : 'POST';
+
+            $.ajax({
+                url: url,
+                type: method,
+                contentType: 'application/json',
+                data: JSON.stringify(data),
+                success: function (response) {
+                    if (!id) {
+                        feature.setId(response.id); // Set the ID returned from the server
+                    }
+                    toastr.success('Feature saved successfully');
+                },
+                error: function (xhr, status, error) {
+                    console.error('Error saving feature:', error);
+                }
+            });
+        }
+
+        window.deleteFeature = function (id) {
+            if (!id) {
+                console.error('Feature ID is missing.');
+                return;
+            }
+
+            $.ajax({
+                url: 'https://localhost:7267/api/geoentity/' + id,
+                type: 'DELETE',
+                success: function () {
+                    vectorSource.removeFeature(vectorSource.getFeatureById(id));
+                    toastr.success('Feature deleted successfully!');
+                    if (currentPanel) {
+                        currentPanel.close();
+                    }
+                },
+                error: function (xhr, status, error) {
+                    console.error('Error deleting feature:', error);
+                    toastr.error('Error deleting feature.');
+                }
+            });
+        };
+
+
+        $('#addPoint').click(function () {
+            setupDrawInteraction(map, 'Point');
+        });
+
+        $('#addPolygon').click(function () {
+            setupDrawInteraction(map, 'Polygon');
+        });
+
+        $('#query').click(function () {
+            if (currentPanel) {
+                currentPanel.close();
+            }
+
+            var content = '<table id="featureTable" class="display"><thead><tr><th>Name</th><th>Type</th><th>Actions</th></tr></thead><tbody>';
+            vectorSource.getFeatures().forEach(function (feature) {
+                var id = feature.getId();
+                var name = feature.get('name') || 'Unnamed';
+                var type = feature.getGeometry().getType();
+                content += '<tr data-id="' + id + '"><td>' + name + '</td><td>' + type + '</td><td>' +
+                    '<button class="showFeature" data-id="' + id + '">Show</button>' +
+                    '<button class="editFeature" data-id="' + id + '">Edit</button>' +
+                    '<button class="deleteFeature" data-id="' + id + '">Delete</button>' +
+                    '</td></tr>';
+            });
+            content += '</tbody></table>';
+
+            currentPanel = jsPanel.create({
+                theme: 'primary',
+                headerTitle: 'Feature List',
+                position: 'center-top 0 58',
+                contentSize: '500 300',
+                content: content
+            });
+
+            $('#featureTable').DataTable();
+
+            $('.showFeature').click(function () {
+                var id = $(this).data('id');
+                var feature = vectorSource.getFeatureById(id);
+                if (feature) {
+                    var geom = feature.getGeometry();
+                    var coords;
+                    if (geom.getType() === 'Point') {
+                        coords = geom.getCoordinates();
+                    } else if (geom.getType() === 'Polygon') {
+                        coords = geom.getInteriorPoint().getCoordinates();
+                    }
+                    map.getView().animate({ center: coords, zoom: 10 });
+                }
+            });
+
+            $('.editFeature').click(function () {
+                var id = $(this).data('id');
+                var feature = vectorSource.getFeatureById(id);
+                if (feature) {
+                    var geom = feature.getGeometry();
+                    var coords;
+                    if (geom.getType() === 'Point') {
+                        coords = ol.proj.toLonLat(geom.getCoordinates());
+                        openPanel(coords, id, 'Point');
+                    } else if (geom.getType() === 'Polygon') {
+                        coords = geom.getCoordinates()[0].map(coord => ol.proj.toLonLat(coord));
+                        openPanel(coords, id, 'Polygon');
+                    }
+                }
+            });
+
+            $('.deleteFeature').click(function () {
+                var id = $(this).data('id');
+                deleteFeature(id);
+            });
+        });
+
+        $(document).ready(function () {
+            map = initializeMap();
+            addVectorLayerToMap(map);
+
+            var modify = new ol.interaction.Modify({ source: vectorSource });
+            map.addInteraction(modify);
+
+            var select = new ol.interaction.Select();
+            map.addInteraction(select);
+
+            select.on('select', function (e) {
+                e.selected.forEach(function (feature) {
+                    var type = feature.getGeometry().getType();
+                    var coords;
+                    if (type === 'Point') {
+                        coords = ol.proj.toLonLat(feature.getGeometry().getCoordinates());
+                        openPanel(coords, feature.getId(), 'Point');
+                    } else if (type === 'Polygon') {
+                        coords = feature.getGeometry().getCoordinates()[0].map(coord => ol.proj.toLonLat(coord));
+                        openPanel(coords, feature.getId(), 'Polygon');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
